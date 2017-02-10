@@ -1,0 +1,44 @@
+{
+  "name": "OSEnergy-signalk",
+  "version": "0.1.0",
+  "description": "OSEnergy ASCII strings to Signal K parser",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index",
+    "test": "mocha"
+  },
+  "bin": {
+    "OSEnergyASCII-signalk": "./bin/OSEnergy-signalk"
+  },
+  "dependencies": {
+    "ggencoder": "^0.1.5",
+    "lodash": "^4.0.0",
+    "signalk-multiplexer": "git://github.com/SignalK/signalk-multiplexer-node.git",
+    "uuid": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-things": "^0.2.0",
+    "debug": "^2.2.0",
+    "mocha": "^2.3.4",
+    "signalk-schema": "0.0.1-0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasonw/signalk-parser-OSEnergy"
+  },
+  "keywords": [
+    "alternator",
+    "OSEnergy",
+    "signalk",
+    "signal",
+    "k",
+    "parser"
+  ],
+  "author": "Al Thomason <thomason.al@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thomasonw/signalk-parser-OSEnergy/issues"
+  },
+  "homepage": "https://github.com/thomasonw/signalk-parser-OSEnergy"
+}
