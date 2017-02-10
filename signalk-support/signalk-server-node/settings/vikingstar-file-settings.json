@@ -1,0 +1,64 @@
+
+{
+  "vessel": {
+    "name": "Viking Star",
+    "brand":"McQueen",
+    "type": "Monk 45",
+    "uuid": "urn:mrn:signalk:uuid:5012d2c2-18a0-4530-940f-a95ba33c42f8I",
+    "mmsi": "366847830",
+
+    "dimensions": {
+        "length": 13.7,
+        "width": 4.3,
+        "mast": 7,
+        "depthTransducer": 0.5,
+        "keel": 1.4
+    },
+    
+    "communications": {
+        "callsignVhf" : "WDA 7848"
+    }
+  },
+  
+  "interfaces": {},
+  
+  "pipedProviders": [{
+    "id": "OSEnergyFile",
+    "pipeElements": [
+       { 
+         "type": "providers/filestream",
+         "options": {
+           "filename": "samples/OSEnergy.log"
+         },
+         "optionMappings": [
+           {
+             "fromAppProperty": "vkst.nmeafilename",
+             "toOption": "filename"
+           }
+         ]
+       },
+       { 
+         "type": "providers/throttle",
+         "options": {
+            "rate": 1000
+         }
+       },       
+       {
+         "type": "providers/liner"
+       },
+       {
+          "type": "providers/OSEnergy-signalk",
+          "optionMappings": [
+            {
+             "fromAppProperty": "selfId",
+             "toOption": "selfId"
+            },
+            {
+             "fromAppProperty": "selfType",
+             "toOption": "selfType"
+            }
+          ]
+       }               
+    ]
+  }]
+}
