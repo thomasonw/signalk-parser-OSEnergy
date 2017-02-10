@@ -110,4 +110,4 @@ $ cat some-file.log | ./bin/OSEnergy-signalk
 
 ## Use as a Node Module
 
-See https://github.com/SignalK/signalk-server-node/blob/master/providers/nmea0183-signalk.js for an example in a Node application.
+See https://github.com/thomasonw/OSEnergy-signalk/blob/master/signalk-support/signalk-server-node/providers/OSEnergy-signalk.js  for an example in a Node application.
