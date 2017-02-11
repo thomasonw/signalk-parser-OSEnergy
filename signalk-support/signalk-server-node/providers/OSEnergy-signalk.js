@@ -22,7 +22,7 @@ function ToSignalK(options) {
     objectMode: true
   });
 
-  this.parser = new(require('OSEnergy-signalk').Parser)(options);
+  this.parser = new(require('signalk-parser-OSEnergy').Parser)(options);
 
   var that = this;
   this.parser.on('OSEnergy', function(sentence) {

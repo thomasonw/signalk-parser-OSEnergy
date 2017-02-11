@@ -14,10 +14,12 @@ At this time, only a single instance of the parser may be executed.  There are g
 
 see variables ```deviceName``` and ```associatedBus``` in file ```./lib/index.js```
 
-t.b.d: Test subdirectory need to be created. 
+t.b.d: Test subdirectory needs to be created. 
 
 
 ## Installation and Use
+
+Open a termainal in the approperate directory (e.g.: ```cd ~/signalk-server-node/node_modules```) and then:
 
 ```
 $ git clone https://github.com/thomasonw/signalk-parser-OSEnergy.git
@@ -108,6 +110,16 @@ You can also pipe a file into the parser CLI:
 $ cat some-file.log | ./bin/OSEnergy-signalk
 ```
 
+To install several  support files used in Signal-k (and some examples), do the following:
+```
+$ cp  -R -f -v signalk-support/signalk-server-node  ../../..
+$ cd ~/signalk-server-node
+$ ./bin/osenergy-from-file
+```
+
+
 ## Use as a Node Module
 
 See https://github.com/thomasonw/OSEnergy-signalk/blob/master/signalk-support/signalk-server-node/providers/OSEnergy-signalk.js  for an example in a Node application.
+
+
