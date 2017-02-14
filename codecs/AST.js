@@ -67,18 +67,18 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   
   var pathValues = []
   pathValues.push({
-    "path": "electrical.alternator.dcQualities.voltage",
+    "path": "electrical.alternator.voltage",
     "value": this.float(values[17])
   })
   
   pathValues.push({
-    "path": "electrical.alternator.dcQualities.current",
+    "path": "electrical.alternator.current",
     "value": this.float(values[3])
   })
   
   if (this.int(values[13]) != -99) {
       pathValues.push({
-        "path": "electrical.alternator.dcQualities.temperature",
+        "path": "electrical.alternator.temperature",
         "value": this.transform(this.float(values[13]),'f','k')  
     })
   }
@@ -91,7 +91,7 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   }
   
   pathValues.push({
-    "path": "electrical.batteries."+multiplexer.associatedBus+".dcQualities.voltage",
+    "path": "electrical.batteries."+multiplexer.associatedBus+".voltage",
     "value": this.float(values[2])
   })
   
