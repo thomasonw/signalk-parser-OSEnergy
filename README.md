@@ -112,8 +112,12 @@ To install several  support files used in Signal-k (and some examples), do the f
 $ cp  -R -f -v signalk-support/signalk-server-node  ../../..
 $ cd ~/signalk-server-node
 $ ./bin/osenergy-from-file
+
+--or--
+
+$ ./bin/osenergy-from-file-dual
 ```
-(You may have to set the executable permission flag 1st, ```chmod 755 ./bin/osenergy-from-file```  - until I can figure out the workaround for a Github/windows permission issue)
+You may have to set the executable permission flag 1st (via your file browser, or `chmod 755 ./bin/osenergy-from-file` )  - until I can figure out the workaround for a Github/windows permission issue.
 
 
 
