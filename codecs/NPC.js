@@ -44,13 +44,11 @@ NAME & PASSWORD CONFIG – NPC;
 
 
 var Codec = require('../lib/OSEnergy');
-
  
 module.exports = new Codec('NPC', function(multiplexer, input) {
   var values = input.values;
-  var lib    = require('../lib/index');
 
-  lib.setDN(values[1]);
+  multiplexer.deviceName = values[1];
 
   return true;
   

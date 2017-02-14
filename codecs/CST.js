@@ -62,9 +62,8 @@ var Codec = require('../lib/OSEnergy');
  
 module.exports = new Codec('CST', function(multiplexer, input) {
   var values = input.values;
-  var lib    = require('../lib/index');
 
-  lib.setAB(values[0]);
+  multiplexer.associatedBus = values[0]
 
   return true;
   

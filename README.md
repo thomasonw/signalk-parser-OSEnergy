@@ -10,9 +10,6 @@ http://arduinoalternatorregulator.blogspot.com/
 
 
 ## LIMITATION
-At this time, only a single instance of the parser may be executed.  There are global variables used to retain the battery ID and device name.  This is because I am very limited in Javascript skills:   ==***If anyone is able to provide insight, or a push, on how to solve this please do!***==
-
-see variables ```deviceName``` and ```associatedBus``` in file ```./lib/index.js```
 
 t.b.d: Test subdirectory needs to be created. 
 

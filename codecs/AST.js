@@ -62,7 +62,6 @@ var Codec = require('../lib/OSEnergy');
  
 module.exports = new Codec('AST', function(multiplexer, input) {
   var values = input.values;
-  var lib    = require('../lib/index');
 
   multiplexer.self();
   
@@ -92,7 +91,7 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   }
   
   pathValues.push({
-    "path": "electrical.batteries."+lib.getAB()+".dcQualities.voltage",
+    "path": "electrical.batteries."+multiplexer.associatedBus+".dcQualities.voltage",
     "value": this.float(values[2])
   })
   
