@@ -27,6 +27,7 @@ var codecs = {
   AST: require('./AST'),
   CST: require('./CST'),
   NPC: require('./NPC'),
- };
+  SCV: require('./SCV'),
+  };
 
 module.exports = codecs;

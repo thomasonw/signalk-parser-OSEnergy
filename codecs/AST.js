@@ -76,12 +76,80 @@ module.exports = new Codec('AST', function(multiplexer, input) {
     "value": this.float(values[3])
   })
   
+  switch (this.int(values[10])) {
+      case 5:
+      case 6:
+      case 7:  
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "charging bulk"  
+            })
+            break;
+            
+      case 8:  
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "charging acceptance" 
+            })
+            break;
+            
+      case 9:  
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "charging overcharge" 
+            })
+            break;            
+      
+      case 10:
+      case 11:
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "charging float"  
+            })
+            break;
+
+                        
+      case 13:  
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "charging equalize" 
+            })
+            break;            
+  
+      case 12:
+      case 14:
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "other"  
+            })
+            break;
+
+       default:
+            pathValues.push({
+                "path": "electrical.alternator.mode",
+                "value": "unknown"  
+            })
+            break;             
+  }
+  
+  
+  
   if (this.int(values[13]) != -99) {
       pathValues.push({
         "path": "electrical.alternator.temperature",
         "value": this.transform(this.float(values[13]),'f','k')  
     })
   }
+  
+  
+  if (multiplexer.pullyRatio != null) {
+      pathValues.push({
+        "path": "electrical.alternator.revolutions",
+        "value": this.int(values[15]) * multiplexer.pullyRatio  / 60.0 
+    })   
+      
+  }
+  
   
   if (this.int(values[18]) != -99) {
       pathValues.push({
@@ -114,4 +182,3 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   return true;
   
 });
-
