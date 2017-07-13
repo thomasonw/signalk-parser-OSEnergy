@@ -137,7 +137,7 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   if (this.int(values[13]) != -99) {
       pathValues.push({
         "path": "electrical.alternator.temperature",
-        "value": this.transform(this.float(values[13]),'f','k')  
+        "value": this.transform(this.float(values[13]),'c','k')  
     })
   }
   
@@ -154,7 +154,7 @@ module.exports = new Codec('AST', function(multiplexer, input) {
   if (this.int(values[18]) != -99) {
       pathValues.push({
         "path": "electrical.alternator.regulatorTemperature",
-        "value":  this.transform(this.float(values[18]),'f','k') 
+        "value":  this.transform(this.float(values[18]),'c','k') 
     })
   }
   

@@ -29,44 +29,52 @@ Should return something like this:
 
 ```
 {
-  "self": "B270F85A",
+  "self": "CF62AC2C",
   "version": "1",
   "vessels": {
-    "B270F85A": {
-      "uuid": "B270F85A",
+    "CF62AC2C": {
+      "uuid": "CF62AC2C",
       "electrical": {
         "alternator": {
-          "dcQualities": {
-            "voltage": {
-              "value": 14.31,
-              "source": {
-                "type": "OSEnergy",
-                "sentence": "AST",
-                "label": "signalk-parser-OSEnergy",
-                "talker": "???"
-              },
-              "timestamp": "2017-02-10T20:53:40.000Z"
+          "voltage": {
+            "value": 14.31,
+            "source": {
+              "type": "OSEnergy",
+              "sentence": "AST",
+              "label": "signalk-parser-OSEnergy",
+              "talker": "???"
             },
-            "current": {
-              "value": 0,
-              "source": {
-                "type": "OSEnergy",
-                "sentence": "AST",
-                "label": "signalk-parser-OSEnergy",
-                "talker": "???"
-              },
-              "timestamp": "2017-02-10T20:53:40.000Z"
+            "timestamp": "2017-07-07T23:04:08.000Z"
+          },
+          "current": {
+            "value": 0,
+            "source": {
+              "type": "OSEnergy",
+              "sentence": "AST",
+              "label": "signalk-parser-OSEnergy",
+              "talker": "???"
             },
-            "temperature": {
-              "value": 308.15000000000003,
-              "source": {
-                "type": "OSEnergy",
-                "sentence": "AST",
-                "label": "signalk-parser-OSEnergy",
-                "talker": "???"
-              },
-              "timestamp": "2017-02-10T20:53:40.000Z"
-            }
+            "timestamp": "2017-07-07T23:04:08.000Z"
+          },
+          "mode": {
+            "value": "charging float",
+            "source": {
+              "type": "OSEnergy",
+              "sentence": "AST",
+              "label": "signalk-parser-OSEnergy",
+              "talker": "???"
+            },
+            "timestamp": "2017-07-07T23:04:08.000Z"
+          },
+          "temperature": {
+            "value": 308.15000000000003,
+            "source": {
+              "type": "OSEnergy",
+              "sentence": "AST",
+              "label": "signalk-parser-OSEnergy",
+              "talker": "???"
+            },
+            "timestamp": "2017-07-07T23:04:08.000Z"
           },
           "fieldDrive": {
             "value": 0,
@@ -76,22 +84,20 @@ Should return something like this:
               "label": "signalk-parser-OSEnergy",
               "talker": "???"
             },
-            "timestamp": "2017-02-10T20:53:40.000Z"
+            "timestamp": "2017-07-07T23:04:08.000Z"
           }
         },
         "batteries": {
           "0": {
-            "dcQualities": {
-              "voltage": {
-                "value": 14.31,
-                "source": {
-                  "type": "OSEnergy",
-                  "sentence": "AST",
-                  "label": "signalk-parser-OSEnergy",
-                  "talker": "???"
-                },
-                "timestamp": "2017-02-10T20:53:40.000Z"
-              }
+            "voltage": {
+              "value": 14.31,
+              "source": {
+                "type": "OSEnergy",
+                "sentence": "AST",
+                "label": "signalk-parser-OSEnergy",
+                "talker": "???"
+              },
+              "timestamp": "2017-07-07T23:04:08.000Z"
             }
           }
         }
@@ -119,7 +125,13 @@ $ ./bin/osenergy-from-file-dual
 ```
 You may have to set the executable permission flag 1st (via your file browser, or `chmod 755 ./bin/osenergy-from-file` )  - until I can figure out the workaround for a Github/windows permission issue.
 
+You can try opening a browser to:  
+      ```http://localhost:3000/instrumentpanel/``` 
+ and see some output.   
 
+Or, open a termainl and type of following: 
+    ```wscat --connect 'ws://localhost:3000/signalk/v1/stream?stream=delta'```
+ to see the raw SignalK JSON output.
 
 ## Use as a Node Module
 
